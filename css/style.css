@@ -1,8 +1,85 @@
 /*
 COLORS:
 
-Light green: #7ed56f
+Light green: #7ED56F
 Medium green: #55c57a
 Dark green: #28b485
 
 */
+/* 
+Reset CSS: remove all default margin and padding to ensure consistency across browsers
+Change box-sizing to border-box for easier sizing calculations: The border and padding will be included in the element's total width and height.
+This helps to avoid issues with width and height calculations, especially when using padding or borders.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+This preset will be inherited to any other child element that under the body element
+Configure the body element with a default font family, font weight, font size, line height, and text color.
+*/
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh; /* 95% of viewport height */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 133, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover; /* Cover the entire header area - auto adjust when the size screen changing*/
+  background-position: top; /* Position the background image at the top */
+  position: relative; /* Set the position to relative to allow absolute positioning of child elements */
+
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px; /* Set the height of the logo - the width gonna be figure out by browser */
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the text box vertically and horizontally */
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+}
