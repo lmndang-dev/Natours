@@ -1,0 +1,26 @@
+/* 
+Reset CSS: remove all default margin and padding to ensure consistency across browsers
+Change box-sizing to border-box for easier sizing calculations: The border and padding will be included in the element's total width and height.
+This helps to avoid issues with width and height calculations, especially when using padding or borders.
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/*
+  Set the default font size to make the responsive design better
+  62.5% of default browser font size is 0.625 * 16px = 10px
+  1rem = 10px
+*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  //Using border box model - inherits by main;
+  box-sizing: border-box;
+}
