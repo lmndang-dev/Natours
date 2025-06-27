@@ -6,6 +6,7 @@ $color-primary-dark: #28b485;
 
 $color-grey-dark: #777;
 $color-white: #FFF;
+$color-black: #000;
 /* 
 Reset CSS: remove all default margin and padding to ensure consistency across browsers
 Change box-sizing to border-box for easier sizing calculations: The border and padding will be included in the element's total width and height.
@@ -165,14 +166,14 @@ body {
 
 .btn:hover {
   transform: translateY(-3px); /*When hover - move the button up 3px*/
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
 }
 
 .btn:active {
   transform: translateY(
     -1px
   ); /*When click - move the button up 1px (move down 3px - 1px = 2px)*/
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
 }
 
 .btn--white {

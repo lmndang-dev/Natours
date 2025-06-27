@@ -1,11 +1,3 @@
-/*
-COLORS:
-
-Light green: #7ED56F
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
 /* 
 Reset CSS: remove all default margin and padding to ensure consistency across browsers
 Change box-sizing to border-box for easier sizing calculations: The border and padding will be included in the element's total width and height.
@@ -44,16 +36,10 @@ body {
 
 .header {
   height: 95vh; /* 95% of viewport height */
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(126, 213, 111, 0.8),
-      rgba(40, 180, 133, 0.8)
-    ),
-    url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   background-size: cover; /* Cover the entire header area - auto adjust when the size screen changing*/
   background-position: top; /* Position the background image at the top */
   position: relative; /* Set the position to relative to allow absolute positioning of child elements */
-
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
@@ -71,18 +57,13 @@ body {
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Center the text box vertically and horizontally */
-
+  transform: translate(-50%, -50%); /* Center the text box vertically and horizontally */
   text-align: center;
 }
 
 .heading-primary {
-  color: #fff;
+  color: #FFF;
   text-transform: uppercase;
-
   backface-visibility: hidden; /* Hide the backface of the element - avoid shaking in the animation */
   margin-bottom: 6rem;
 }
@@ -92,7 +73,6 @@ body {
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
-
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out; /* Animation will start slowly and then speed up */
@@ -111,51 +91,42 @@ body {
     opacity: 0;
     transform: translateX(-10rem);
   }
-
   80% {
     transform: translateX(1rem);
   }
-
   100% {
     opacity: 1;
     transform: translate(0);
   }
 }
-
 @keyframes moveInRight {
   0% {
     opacity: 0;
     transform: translateX(10rem);
   }
-
   80% {
     transform: translateX(-1rem);
   }
-
   100% {
     opacity: 1;
     transform: translate(0);
   }
 }
-
 @keyframes moveInBottom {
   0% {
     opacity: 0;
     transform: translateY(3rem);
   }
-
   100% {
     opacity: 1;
     transform: translate(0);
   }
 }
-
 /* Button default styles*/
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  color: inherit; /* inherit text color from body element */
   padding: 1.5rem 4rem;
   display: inline-block; /* Keep the element inline but allow to adjust dimension of the element */
   border-radius: 10rem;
@@ -170,14 +141,13 @@ body {
 }
 
 .btn:active {
-  transform: translateY(
-    -1px
-  ); /*When click - move the button up 1px (move down 3px - 1px = 2px)*/
+  transform: translateY(-1px); /*When click - move the button up 1px (move down 3px - 1px = 2px)*/
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn--white {
-  background-color: #fff;
+  background-color: #FFF;
+  color: #777;
 }
 
 .btn::after {
@@ -194,7 +164,7 @@ body {
 }
 
 .btn--white::after {
-  background-color: #fff;
+  background-color: #FFF;
 }
 
 .btn:hover::after {
@@ -206,3 +176,5 @@ body {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
+
+/*# sourceMappingURL=style.css.map */
