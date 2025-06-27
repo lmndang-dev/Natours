@@ -11,10 +11,21 @@ Reset CSS: remove all default margin and padding to ensure consistency across br
 Change box-sizing to border-box for easier sizing calculations: The border and padding will be included in the element's total width and height.
 This helps to avoid issues with width and height calculations, especially when using padding or borders.
 */
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+/*
+  Set the default font size to make the responsive design better
+  62.5% of default browser font size is 0.625 * 16px = 10px
+  1rem = 10px
+*/
+html {
+  font-size: 62.5%;
 }
 
 /* 
@@ -24,10 +35,11 @@ Configure the body element with a default font family, font weight, font size, l
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 3rem;
+  box-sizing: border-box;
 }
 
 .header {
@@ -47,12 +59,12 @@ body {
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px; /* Set the height of the logo - the width gonna be figure out by browser */
+  height: 3.5rem; /* Set the height of the logo - the width gonna be figure out by browser */
 }
 
 .text-box {
@@ -72,14 +84,14 @@ body {
   text-transform: uppercase;
 
   backface-visibility: hidden; /* Hide the backface of the element - avoid shaking in the animation */
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   animation-name: moveInLeft;
   animation-duration: 1s;
@@ -88,20 +100,20 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
   animation: moveInRight 1s ease-out; /* Animation will start slowly and then speed up */
 }
 
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(-10rem);
   }
 
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
 
   100% {
@@ -113,11 +125,11 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(10rem);
   }
 
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
 
   100% {
@@ -129,7 +141,7 @@ body {
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
 
   100% {
@@ -144,23 +156,24 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   color: inherit; /* inherit text color from body element */
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block; /* Keep the element inline but allow to adjust dimension of the element */
-  border-radius: 100px;
+  border-radius: 10rem;
   transition: all 0.2s;
   position: relative;
+  font-size: 1.6rem;
 }
 
 .btn:hover {
   transform: translateY(-3px); /*When hover - move the button up 3px*/
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
   transform: translateY(
     -1px
   ); /*When click - move the button up 1px (move down 3px - 1px = 2px)*/
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
@@ -172,7 +185,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
