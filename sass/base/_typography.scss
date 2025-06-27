@@ -50,7 +50,9 @@ body {
     variables.$color-primary-light,
     variables.$color-primary-dark
   );
-  -webkit-background-clip: text;
+  background-clip: text;
+  //-webkit-background-clip: text;
+  //https://stackoverflow.com/questions/76144712/visual-studio-code-warning-also-define-the-standard-property-background-clip
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.2s;
