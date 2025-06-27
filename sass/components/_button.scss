@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 .btn {
   /* Button default styles*/
   &:link,
@@ -14,7 +16,7 @@
 
   &:hover {
     transform: translateY(-3px); /*When hover - move the button up 3px*/
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    box-shadow: 0 1rem 2rem rgba(variables.$color-black, 0.2);
 
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -26,15 +28,15 @@
     transform: translateY(
       -1px
     ); /*When click - move the button up 1px (move down 3px - 1px = 2px)*/
-    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(variables.$color-black, 0.2);
   }
 
   &--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
+    background-color: variables.$color-white;
+    color: variables.$color-grey-dark;
 
     &::after {
-      background-color: $color-white;
+      background-color: variables.$color-white;
     }
   }
 

@@ -1,19 +1,25 @@
 //Using 7-1 Pattern https://sass-guidelin.es/#the-7-1-pattern
 
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
+// SASS migration: https://sass-lang.com/documentation/breaking-changes/import/
+
+//The abstracts/ folder gathers all Sass tools and helpers used across the project.
+//Every global variable, function, mixin and placeholder should be put in here.
+@use "abstracts/functions";
+@use "abstracts/mixins";
+@use "abstracts/variables";
 
 //The base/ folder holds what we might call the boilerplate code for the project.
-@import "base/base";
-@import "base/animations";
-@import "base/typography";
-@import "base/utilities";
+@use "base/base";
+@use "base/animations";
+@use "base/typography";
+@use "base/utilities";
 
 //For smaller components
-@import "components/button";
+@use "components/button";
 
-@import "layout/header";
+//The layout/ folder contains everything that takes part in laying out the site or application.
+@use "layout/grid";
+@use "layout/header";
 
 //If you have page-specific styles, it is better to put them in a pages/ folder, in a file named after the page.
-@import "pages/home";
+@use "pages/home";

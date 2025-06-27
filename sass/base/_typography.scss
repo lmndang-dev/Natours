@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 /* 
 This preset will be inherited to any other child element that under the body element
 Configure the body element with a default font family, font weight, font size, line height, and text color.
@@ -7,12 +9,12 @@ body {
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: $color-grey-dark;
+  color: variables.$color-grey-dark;
   padding: 3rem;
 }
 
 .heading-primary {
-  color: $color-white;
+  color: variables.$color-white;
   text-transform: uppercase;
 
   backface-visibility: hidden; /* Hide the backface of the element - avoid shaking in the animation */
