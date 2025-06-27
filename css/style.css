@@ -190,6 +190,11 @@ body {
   animation-fill-mode: backwards;
 }
 
+.btn-text:link, .btn-text::visited {
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+}
 .row {
   max-width: 114rem;
   margin: 0 auto;
