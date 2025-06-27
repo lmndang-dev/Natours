@@ -42,17 +42,14 @@ body {
   position: relative; /* Set the position to relative to allow absolute positioning of child elements */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
-
 .header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
-
 .header__logo {
   height: 3.5rem; /* Set the height of the logo - the width gonna be figure out by browser */
 }
-
 .header__text-box {
   position: absolute;
   top: 40%;
@@ -62,12 +59,11 @@ body {
 }
 
 .heading-primary {
-  color: #FFF;
+  color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden; /* Hide the backface of the element - avoid shaking in the animation */
   margin-bottom: 6rem;
 }
-
 .heading-primary--main {
   display: block;
   font-size: 6rem;
@@ -77,7 +73,6 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out; /* Animation will start slowly and then speed up */
 }
-
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
@@ -122,9 +117,10 @@ body {
     transform: translate(0);
   }
 }
-/* Button default styles*/
-.btn:link,
-.btn:visited {
+.btn {
+  /* Button default styles*/
+}
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -134,22 +130,25 @@ body {
   position: relative;
   font-size: 1.6rem;
 }
-
 .btn:hover {
   transform: translateY(-3px); /*When hover - move the button up 3px*/
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
-
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0; /* Hide it after hover transition*/
+}
 .btn:active {
   transform: translateY(-1px); /*When click - move the button up 1px (move down 3px - 1px = 2px)*/
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-
 .btn--white {
-  background-color: #FFF;
+  background-color: #fff;
   color: #777;
 }
-
+.btn--white::after {
+  background-color: #fff;
+}
 .btn::after {
   content: "";
   display: inline-block;
@@ -162,16 +161,6 @@ body {
   z-index: -1; /* Hide below the button*/
   transition: all 0.4s; /* add transition */
 }
-
-.btn--white::after {
-  background-color: #FFF;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; /* Hide it after hover transition*/
-}
-
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
