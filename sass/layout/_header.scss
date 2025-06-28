@@ -12,6 +12,7 @@
   background-position: top; /* Position the background image at the top */
   position: relative; /* Set the position to relative to allow absolute positioning of child elements */
 
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   &__logo-box {
