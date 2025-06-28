@@ -7,7 +7,7 @@
       rgba(variables.$color-primary-light, 0.8),
       rgba(variables.$color-primary-dark, 0.8)
     ),
-    url(../img/hero.jpg);
+    url(../../img/hero.jpg);
   background-size: cover; /* Cover the entire header area - auto adjust when the size screen changing*/
   background-position: top; /* Position the background image at the top */
   position: relative; /* Set the position to relative to allow absolute positioning of child elements */
