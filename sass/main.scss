@@ -24,6 +24,8 @@
 @use "components/story";
 
 //The layout/ folder contains everything that takes part in laying out the site or application.
+@use "layout/navigation";
+@use "layout/footer";
 @use "layout/grid";
 @use "layout/header";
 
