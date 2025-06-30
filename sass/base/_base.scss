@@ -1,3 +1,4 @@
+@use "../abstracts/mixins";
 /* 
 Reset CSS: remove all default margin and padding to ensure consistency across browsers
 Change box-sizing to border-box for easier sizing calculations: The border and padding will be included in the element's total width and height.
@@ -18,6 +19,23 @@ This helps to avoid issues with width and height calculations, especially when u
 */
 html {
   font-size: 62.5%;
+
+  //Always define the larger screen to smaller one
+
+  //Width < 1200px
+  @include mixins.respond(tab-land) {
+    font-size: 56.25%; //1rem = 9px, 9/16=56.25%
+  }
+
+  //Width < 900px
+  @include mixins.respond(tab-port) {
+    font-size: 50%; //1rem = 8px, 8/16=50%
+  }
+
+  //Width > 1800px
+  @include mixins.respond(big-desktop) {
+    font-size: 75%; //1rem = 12px, 12/16=75%
+  }
 }
 
 body {
