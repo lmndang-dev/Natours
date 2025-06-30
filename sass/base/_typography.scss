@@ -1,4 +1,5 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins";
 
 /* 
 This preset will be inherited to any other child element that under the body element
@@ -11,6 +12,11 @@ body {
   line-height: 1.7;
   color: variables.$color-grey-dark;
   padding: 3rem;
+
+  //Width < 900px
+  @include mixins.respond(tab-port) {
+    padding: 0;
+  }
 }
 
 .heading-primary {
@@ -29,6 +35,11 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out; /* Animation will start slowly and then speed up */
+
+    @include mixins.respond(phone) {
+      letter-spacing: 2rem;
+      font-size: 4rem;
+    }
   }
 
   &--sub {
@@ -37,6 +48,11 @@ body {
     font-weight: 700;
     letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out; /* Animation will start slowly and then speed up */
+
+    @include mixins.respond(phone) {
+      letter-spacing: 0.5rem;
+      font-size: 1.8rem;
+    }
   }
 }
 
@@ -57,6 +73,14 @@ body {
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.2s;
+
+  @include mixins.respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include mixins.respond(tab-port) {
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
