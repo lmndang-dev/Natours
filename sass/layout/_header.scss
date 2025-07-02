@@ -2,7 +2,7 @@
 @use "../abstracts/mixins";
 
 .header {
-  height: 95vh; /* 95% of viewport height */
+  height: 85vh; /* 85% of viewport height */
   background-image: linear-gradient(
       to right bottom,
       rgba(variables.$color-primary-light, 0.8),
@@ -13,10 +13,15 @@
   background-position: top; /* Position the background image at the top */
   position: relative; /* Set the position to relative to allow absolute positioning of child elements */
 
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    height: 95vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  }
 
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-width: 37.5em),
+    (min-width: 125em) {
     background-image: linear-gradient(
         to right bottom,
         rgba(variables.$color-primary-light, 0.8),
