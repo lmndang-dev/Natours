@@ -8,13 +8,31 @@
       rgba(variables.$color-primary-light, 0.8),
       rgba(variables.$color-primary-dark, 0.8)
     ),
-    url(../../img/hero.jpg);
+    url(../../img/hero-small.jpg);
   background-size: cover; /* Cover the entire header area - auto adjust when the size screen changing*/
   background-position: top; /* Position the background image at the top */
   position: relative; /* Set the position to relative to allow absolute positioning of child elements */
 
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(variables.$color-primary-light, 0.8),
+        rgba(variables.$color-primary-dark, 0.8)
+      ),
+      url(../../img/hero.jpg);
+  }
+
+  // @media (min-width: 2000px) {
+  //   background-image: linear-gradient(
+  //       to right bottom,
+  //       rgba(variables.$color-primary-light, 0.8),
+  //       rgba(variables.$color-primary-dark, 0.8)
+  //     ),
+  //     url(../../img/hero.jpg);
+  // }
 
   @include mixins.respond(phone) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
