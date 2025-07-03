@@ -36,7 +36,7 @@ em is best for responsive design
   //Phone size
   @if $breakpoint == phone {
     //600px
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       @content;
     }
   }
@@ -44,7 +44,7 @@ em is best for responsive design
   //Tablet Portrait size
   @if $breakpoint == tab-port {
     //900px
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       @content;
     }
   }
@@ -52,7 +52,7 @@ em is best for responsive design
   //Tablet landscape size
   @if $breakpoint == tab-land {
     //1200px
-    @media (max-width: 75em) {
+    @media only screen and (max-width: 75em) {
       @content;
     }
   }
@@ -60,7 +60,7 @@ em is best for responsive design
   //Big desktop screen size
   @if $breakpoint == big-desktop {
     //1800px
-    @media (min-width: 112.5em) {
+    @media only screen and (min-width: 112.5em) {
       @content;
     }
   }

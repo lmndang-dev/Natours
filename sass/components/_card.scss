@@ -185,7 +185,8 @@
     font-weight: 100;
   }
 
-  @include mixins.respond(tab-port) {
+  //@include mixins.respond(tab-port)
+  @media only screen and (max-width: 56.23em), only screen and (hover: none) {
     //FLIP CARD FUNCTION
     height: auto;
     border-radius: 3px;

@@ -1,4 +1,5 @@
 @use "../abstracts/mixins";
+@use "../abstracts/variables";
 /* 
 Reset CSS: remove all default margin and padding to ensure consistency across browsers
 Change box-sizing to border-box for easier sizing calculations: The border and padding will be included in the element's total width and height.
@@ -41,4 +42,9 @@ html {
 body {
   //Using border box model - inherits by main;
   box-sizing: border-box;
+}
+
+::selection {
+  background-color: variables.$color-primary;
+  color: variables.$color-white;
 }
